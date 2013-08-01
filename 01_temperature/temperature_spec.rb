@@ -14,8 +14,6 @@ describe "temperature conversion functions" do
 
     # "it" is also a method that is given to us by RSpec,
     # that also takes a string and a do-end block.
-    # The difference is "it" cannot have any tests nested inside of it, 
-    # describe can. 
     it "converts freezing temperature" do
       # Calling the method ftoc and passing in the integer 32 should return 0.
       ftoc(32).should == 0

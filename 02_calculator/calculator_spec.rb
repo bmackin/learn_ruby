@@ -1,5 +1,6 @@
 # In this problem we are going to make a calculator. 
 
+# Remember to create the file!
 require "calculator.rb"
 
 # #add takes two parameters and adds them
@@ -49,7 +50,7 @@ end
 
 # Extra Credit:
 # If you feel you're up for the challenge, fill in the missing code in the tests below,
-# and get them to pass.
+# based off the descriptions, and get them to pass.
 
 describe "#multiply" do
 

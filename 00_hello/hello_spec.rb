@@ -5,8 +5,8 @@
 # $ rake
 
 # The first time you run the tests, you should get an error saying "cannot load such file -- hello.rb (LoadError)"
-# That error is coming from the line below (line #10)–it means 
-# get a file with the name "hello.rb" in the current directory.
+# That error is coming from the line below (line #10)–
+# it means get a file with the name "hello.rb" in the current directory.
 require "hello.rb"
 # To stop this error from being thrown we need to create the file:
 # $ touch hello.rb 
@@ -14,12 +14,12 @@ require "hello.rb"
 # Now if we run rake again, it will complain about "a undefined local variable or method `hello'"
 # Let's keep this in mind while we go through the next little bit of code.
 
-# The line below is not important to us (line #15),
+# The line below is not important to us (line #18),
 describe "the hello function" do
-  # neither is #17,
+  # neither is #20,
   it "says hello" do
     # but this is the important part. 
-    # Line #23 is saying: if we call the method hello, what it returns should be equal to "Hello!"
+    # Line #24 is saying: if we call the method hello, what it returns should be equal to "Hello!"
     # If that's not the case, this is a failing test.
     hello.should == "Hello!"
     # So in hello.rb let's define a method named hello,
@@ -35,7 +35,7 @@ end
 
 # Congrats, if all went well, we made our first test ever pass!
 
-# But hold on there cowboy, we got another test right in front of us.
+# But hold on there cowboy, we got another test right in front of us now.
 
 describe "the greet function" do
   it "says hello to someone" do

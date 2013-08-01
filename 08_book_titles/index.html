@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Test-First Teaching: learn_ruby: book_titles</title>
+    <title>Test-First Teaching: learn_ruby: timer</title>
     <link href="../assets/style.css" media="screen" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -20,8 +20,8 @@
         <li><a href="../05_silly_blocks/index.html">05 Silly Blocks</a></li>
         <li><a href="../06_performance_monitor/index.html">06 Performance Monitor</a></li>
         <li><a href="../07_hello_friend/index.html">07 Hello Friend</a></li>
-        <li>08 Book Titles</li>
-        <li><a href="../09_timer/index.html">09 Timer</a></li>
+        <li><a href="../08_book_titles/index.html">08 Book Titles</a></li>
+        <li>09 Timer</li>
         <li><a href="../10_temperature_object/index.html">10 Temperature Object</a></li>
         <li><a href="../11_dictionary/index.html">11 Dictionary</a></li>
         <li><a href="../12_rpn_calculator/index.html">12 Rpn Calculator</a></li>
@@ -30,87 +30,73 @@
         <li><a href="../15_in_words/index.html">15 In Words</a></li>
       </ul>
     </div>
-    <h1>book_titles</h1>
-    <div class="content"><div class="rspec_file">  <div class="intro"><h1>Book Titles</h1>
-
-<h1>Topics</h1>
+    <h1>timer</h1>
+    <div class="content"><div class="rspec_file">  <div class="intro"><h1>Topics</h1>
 
 <ul>
-<li>classes and objects</li>
+<li>classes</li>
 <li>instance variables</li>
-<li>setter methods</li>
-<li>strings</li>
+<li>string formats</li>
+<li>modular arithmetic</li>
 </ul>
 
 
-<h1>Notes</h1>
-
-<p>Book Titles in English obey some strange capitalization rules. For example, "and" is lowercase in "War and Peace". This test attempts to make sense of some of those rules.</p>
+<h1>Timer</h1>
 </div>
   <div class="tests">
     <h1>Tests</h1>
-<a class="raw_file" href="book_titles_spec.rb">book_titles_spec.rb</a>
+<a class="raw_file" href="timer_spec.rb">timer_spec.rb</a>
     <pre>
-require 'book'
+require 'timer'
 
-describe Book do
-
-  before do
-    @book = Book.new
+describe &quot;Timer&quot; do
+  before(:each) do
+    @timer = Timer.new
   end
 
-  describe 'title' do
-    it 'should capitalize the first letter' do
-      @book.title = &quot;inferno&quot;
-      @book.title.should == &quot;Inferno&quot;
+  it &quot;should initialize to 0 seconds&quot; do
+    @timer.seconds.should == 0
+  end
+
+  describe 'time_string' do
+    it &quot;should display 0 seconds as 00:00:00&quot; do
+      @timer.seconds = 0
+      @timer.time_string.should == &quot;00:00:00&quot;
     end
 
-    it 'should capitalize every word' do
-      @book.title = &quot;stuart little&quot;
-      @book.title.should == &quot;Stuart Little&quot;
+    it &quot;should display 12 seconds as 00:00:12&quot; do
+      @timer.seconds = 12
+      @timer.time_string.should == &quot;00:00:12&quot;
     end
 
-    describe 'should capitalize every word except...' do
-      describe 'articles' do
-        specify 'the' do
-          @book.title = &quot;alexander the great&quot;
-          @book.title.should == &quot;Alexander the Great&quot;
-        end
-
-        specify 'a' do
-          @book.title = &quot;to kill a mockingbird&quot;
-          @book.title.should == &quot;To Kill a Mockingbird&quot;
-        end
-
-        specify 'an' do
-          @book.title = &quot;to eat an apple a day&quot;
-          @book.title.should == &quot;To Eat an Apple a Day&quot;
-        end
-      end
-
-      specify 'conjunctions' do
-        @book.title = &quot;war and peace&quot;
-        @book.title.should == &quot;War and Peace&quot;
-      end
-
-      specify 'prepositions' do
-        @book.title = &quot;love in the time of cholera&quot;
-        @book.title.should == &quot;Love in the Time of Cholera&quot;
-      end
+    it &quot;should display 66 seconds as 00:01:06&quot; do
+      @timer.seconds = 66
+      @timer.time_string.should == &quot;00:01:06&quot;
     end
 
-    describe 'should always capitalize...' do
-      specify 'I' do
-        @book.title = &quot;what i wish i knew when i was 20&quot;
-        @book.title.should == &quot;What I Wish I Knew When I Was 20&quot;
-      end
-
-      specify 'the first word' do
-        @book.title = &quot;the man in the iron mask&quot;
-        @book.title.should == &quot;The Man in the Iron Mask&quot;
-      end
+    it &quot;should display 4000 seconds as 01:06:40&quot; do
+      @timer.seconds = 4000
+      @timer.time_string.should == &quot;01:06:40&quot;
     end
   end
+
+
+  # One way to implement the Timer is with a helper method.
+  # Uncomment these specs if you want to test-drive that
+  # method, then call that method from inside of time_string.
+  #
+  # describe 'padded' do
+  #   it 'pads zero' do
+  #     @timer.padded(0).should == '00'
+  #   end
+  #   it 'pads one' do
+  #     @timer.padded(1).should == '01'
+  #   end
+  #   it &quot;doesn't pad a two-digit number&quot; do
+  #     @timer.padded(12).should == '12'
+  #   end
+  # end
+
 end</pre>
   </div>
 </div>
