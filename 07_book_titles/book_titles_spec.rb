@@ -1,29 +1,38 @@
-# # Book Titles
-#
-# # Topics
-#
-# * classes and objects
-# * instance variables
-# * setter methods
-# * strings
-#
-# # Notes
-#
-# Book Titles in English obey some strange capitalization rules. For example, "and" is lowercase in "War and Peace". This test attempts to make sense of some of those rules.
-#
-
 require 'book'
 
 describe Book do
 
+  # Before every test...
   before do
+    # do this. (before is a method given to use by RSpec.)
     @book = Book.new
   end
 
   describe 'title' do
     it 'should capitalize the first letter' do
+      # @book is a variable that was defined in the before do-end block.
       @book.title = "inferno"
       @book.title.should == "Inferno"
+      # Another way of saying these two lines is after we set the title of the book, when we get its title
+      # it should be capitalized properly. 
+      # We set the title of the book with @book.title = "inferno"
+      # and we get the title of the book wtih @book.title
+      # 
+      # To be able to do @book.title = "inferno",
+      # when we define the method title it has to look like this:
+      #
+      # def title=(string)
+      #   # your code here
+      # end
+      #
+      # The important part is that equal signs after title in the method name.
+      # It lets us do @book.title = "inferno", versus @book.title("inferno") when we have the method
+      #
+      # def title(string)
+      #   # your code here
+      # end
+      #
+      # (i.e. w/o the equals sign)
     end
 
     it 'should capitalize every word' do
