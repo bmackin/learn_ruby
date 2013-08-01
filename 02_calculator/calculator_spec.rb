@@ -1,41 +1,10 @@
-# # Topics
-#
-# * functions
-# * math
-# * arrays
-# * iterating/looping
-#
-# # Calculator
-#
-# you will build a simple calculator script with the following methods:
-#
-# `add` takes two parameters and adds them
-#
-# `subtract` takes two parameters and subtracts the second from the first
-#
-# `sum` takes an *array* of parameters and adds them all together
-#
-# # Warning
-#
-# You may not have enough knowledge yet to complete `sum`. You will probably
-# need to use **loops** (e.g. `while`) or **iterators** (e.g. `each`) to
-# get the tests to pass.
-#
-# # Bonus
-#
-# There are also some bonus exercises for when you finish the regular ones. The bonus round will help teach you test-driven *development*, not simply test-guided *learning*.
-#
-# Your mission, should you choose to accept it, is to write *tests* for three new methods:
-#
-# * `multiply` which multiplies two numbers together
-# * `power` which raises one number to the power of another number
-# * `[factorial](http://en.wikipedia.org/wiki/Factorial)` (check Wikipedia if you forgot your high school math).
-#
-#
+# In this problem we are going to make a calculator. 
 
-require "calculator"
+require "calculator.rb"
 
+# #add takes two parameters and adds them
 describe "add" do
+
   it "adds 0 and 0" do
     add(0,0).should == 0
   end
@@ -49,13 +18,18 @@ describe "add" do
   end
 end
 
+# #subtract takes two parameters and subtracts the second from the first
 describe "subtract" do
+
   it "subtracts numbers" do
     subtract(10,4).should == 6
   end
 end
 
+# #sum takes an *array* of numbers and adds them all together
+# This one is a bit trickier!
 describe "sum" do
+
   it "computes the sum of an empty array" do
     sum([]).should == 0
   end
@@ -73,27 +47,35 @@ describe "sum" do
   end
 end
 
-# Extra Credit Test-Driving Bonus:
-# once the above tests pass,
-# write tests and code for the following:
+# Extra Credit:
+# If you feel you're up for the challenge, fill in the missing code in the tests below,
+# and get them to pass.
 
 describe "#multiply" do
 
-  it "multiplies two numbers"
+  it "multiplies two numbers" do 
+  end
 
-  it "multiplies several numbers"
+  it "multiplies several numbers" do
+  end
 
-end
-
-describe "#power" do
-  it "raises one number to the power of another number"
 end
 
 # http://en.wikipedia.org/wiki/Factorial
 describe "#factorial" do
-  it "computes the factorial of 0"
-  it "computes the factorial of 1"
-  it "computes the factorial of 2"
-  it "computes the factorial of 5"
-  it "computes the factorial of 10"
+
+  it "computes the factorial of 0" do
+  end
+
+  it "computes the factorial of 1" do
+  end
+
+  it "computes the factorial of 2" do
+  end
+
+  it "computes the factorial of 5" do 
+  end
+
+  it "computes the factorial of 10" do 
+  end
 end
