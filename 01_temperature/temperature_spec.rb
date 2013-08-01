@@ -1,30 +1,27 @@
-# # Topics:
-# * functions
-# * floating-point math
-#
-# # Hints
-#
-# Remember that one degree fahrenheit is 5/9 of one degree celsius, and that the freezing point of water is 0 degrees celsius but 32 degrees fahrenheit.
-#
-# In integer math, there **are no fractions**. So if you are using integer literals, you will be using integer math, which means, for example...
-#
-#    1 / 2 => 0
-#
-# In floating point math, there **are** fractions. So...
-#
-#    1.0 / 2.0 => 0.5
-#
+# TIP: Always, ALWAYS read through all of the tests before you even start writing any code.
 
-require "temperature"
+# Again, a file with a specific name needs to be created, in this case "temperature.rb".
+# $ touch temperature.rb
+require "temperature.rb"
 
+# Now maybe we can talk more about the lines we ignored last problem.
+# describe is a method that takes a sting and a do-end block.
+# The method is given to use by RSpec.
+# The string should describe what is being tested in the do-end block. 
 describe "temperature conversion functions" do
 
   describe "#ftoc" do
 
+    # "it" is also a method that is given to us by RSpec,
+    # that also takes a string and a do-end block.
+    # The difference is "it" cannot have any tests nested inside of it, 
+    # describe can. 
     it "converts freezing temperature" do
+      # Calling the method ftoc and passing in the integer 32 should return 0.
       ftoc(32).should == 0
     end
 
+    # The next three tests are similar, except different numbers are being passed in. 
     it "converts boiling temperature" do
       ftoc(212).should == 100
     end
@@ -39,6 +36,8 @@ describe "temperature conversion functions" do
 
   end
 
+  # Now this set of tests describes a different method, 
+  # not ftoc() anymore, but ctof(). 
   describe "#ctof" do
 
     it "converts freezing temperature" do
@@ -53,15 +52,17 @@ describe "temperature conversion functions" do
       ctof(20).should == 68
     end
 
-    it "converts body temperature" do
-      ctof(37).should be_within(0.1).of(98.6)
-      # Why do we need to use be_within?
-      # See http://www.ruby-forum.com/topic/169330
-      # and http://en.wikipedia.org/wiki/IEEE_754-2008
-      # and http://en.wikipedia.org/wiki/Double_precision_floating-point_format
-      # Also, try "puts 0.5 - 0.4 - 0.1" -- pretty crazy, right?
-    end
-
   end
 
 end
+
+# Remember the difference between integers and floats:
+# 1/2 equals 0
+# but 1.0/2.0 equals 0.5
+# It is important to know this difference to get these tests to pass.
+
+# Also, you can use the following information to figure out what the equation 
+# is to convert between the two units, fahrenheit and celsius: 
+# 
+# 1. One degree fahrenheit is 5/9 of one degree celsius
+# 2. The freezing point of water is 0 degrees celsius but 32 degrees fahrenheit
