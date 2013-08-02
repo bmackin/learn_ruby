@@ -1,4 +1,6 @@
-# Note: 
+# Note: This is the last problem, and it is quite hard!
+# Take your time, don't be scared to ask for help–
+# we're pushing your limits, if you can do it you'll be in an amazing position moving forward.
 
 # Remember one degree fahrenheit is 5/9 of one degree celsius, 
 # and the freezing point of water is 0 degrees celsius but 32 degrees fahrenheit.
@@ -132,3 +134,6 @@ describe Temperature do
   end
 
 end
+
+# There are two extra credit problems if you feel you're up for them by the way!
+# The folders for them are called bonus_dictionary and bonus_rpn_dictionary

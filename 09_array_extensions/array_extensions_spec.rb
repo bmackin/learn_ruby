@@ -5,6 +5,20 @@ describe Array do
   describe "#sum" do
     it "has a #sum method" do
       [].should respond_to(:sum)
+      Array.should respond_to(:sum)
+      # [] and Array are synonymous
+      # 
+      # Whoa! Hold on! We're expected to add a method 
+      # to a class that already exists inside of Ruby?
+      # Well, yes. And the way you can do that is quite easy:
+      #
+      # class Array
+      #   def hello
+      #     return "Hello!"
+      #   end
+      # end
+      #
+      # [].hello => "Hello!"
     end
 
     it "should be 0 for an empty array" do
