@@ -1,15 +1,12 @@
-# # Topics
-#
-# * classes
-# * instance variables
-# * string formats
-# * modular arithmetic
-#
-# # Timer
+# Timer formats a given # of seconds
+# into something you see on a stopwatch, i.e. 00:00:00 or 00:10:22 
 
 require 'timer'
 
 describe "Timer" do
+
+  # before each test create a new instance of the class Timer
+  # and store it into the instance variable named @timer
   before(:each) do
     @timer = Timer.new
   end
@@ -42,8 +39,8 @@ describe "Timer" do
 
 
   # One way to implement the Timer is with a helper method.
-  # Uncomment these specs if you want to test-drive that
-  # method, then call that method from inside of time_string.
+  # This helper method would be called by time_string.
+  # Uncomment these specs if you want to be tested for this helper method.
   #
   # describe 'padded' do
   #   it 'pads zero' do
