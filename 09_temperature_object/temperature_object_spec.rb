@@ -1,6 +1,4 @@
-# Note: The problems are becoming more difficult now!
-# Take your time with the next four, don't be scared to ask for help,
-# we're pushing your limits, if you can do them you'll be in an amazing position moving forward.
+# Note: 
 
 # Remember one degree fahrenheit is 5/9 of one degree celsius, 
 # and the freezing point of water is 0 degrees celsius but 32 degrees fahrenheit.
@@ -128,7 +126,7 @@ describe Temperature do
   #
   # 1. Fill in the tests below, so that they test for two class methods – ftoc and ctof
   # 2. Refactor the rest of your code so it calls these two methods when appropriate
-  
+
   describe "utility class methods" do
 
   end

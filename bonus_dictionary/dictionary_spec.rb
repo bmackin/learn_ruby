@@ -1,11 +1,3 @@
-# # Topics
-#
-# * Hash
-# * Array
-# * instance variables
-# * regular expressions
-#
-
 require 'dictionary'
 
 describe Dictionary do
@@ -71,13 +63,7 @@ describe Dictionary do
     @d.add('zebra' => 'African land animal with stripes')
     @d.add('fish' => 'aquatic animal')
     @d.add('apple' => 'fruit')
+    # Enter %w(apple fish zebra) in irb and see what happens
     @d.keywords.should == %w(apple fish zebra)
-  end
-
-  it 'can produce printable output like so: [keyword] "definition"' do
-    @d.add('zebra' => 'African land animal with stripes')
-    @d.add('fish' => 'aquatic animal')
-    @d.add('apple' => 'fruit')
-    @d.printable.should == %Q{[apple] "fruit"\n[fish] "aquatic animal"\n[zebra] "African land animal with stripes"}
   end
 end
