@@ -71,7 +71,7 @@ describe "some silly block functions" do
       repeater do
         n += 3
       end
-      n.should == 4
+      n.should == 5
     end
 
     it "executes the default block 3 times" do
