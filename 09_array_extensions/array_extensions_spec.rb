@@ -3,9 +3,9 @@ require "array_extensions" # we don't call it "array.rb" since that would be con
 describe Array do
 
   describe "#sum" do
-    it "has a #sum method" do
-      [].should respond_to(:sum)
-      Array.should respond_to(:sum)
+    # it "has a #sum method" do
+    #   [].should respond_to(:sum)
+    #   Array.should respond_to(:sum)
       # [] and Array are synonymous
       # 
       # Whoa! Hold on! We're expected to add a method 
@@ -19,7 +19,7 @@ describe Array do
       # end
       #
       # [].hello => "Hello!"
-    end
+    # end
 
     it "should be 0 for an empty array" do
       [].sum.should == 0
