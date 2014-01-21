@@ -2,7 +2,7 @@
 
 # Again, a file with a specific name needs to be created, in this case "temperature.rb".
 # $ touch temperature.rb
-require "temperature.rb"
+require_relative 'temperature'
 
 # Now maybe we can talk more about the lines we ignored last problem.
 # describe is a method that takes a sting and a do-end block.
