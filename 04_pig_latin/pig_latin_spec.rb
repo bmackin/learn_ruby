@@ -4,7 +4,7 @@
 #
 # Rule 2: If a word begins with a consonant sound, move it to the end of the word, and then add an "ay" sound to the end of the word.
 
-require "pig_latin"
+require_relative 'pig_latin'
 
 describe "#translate" do
 
