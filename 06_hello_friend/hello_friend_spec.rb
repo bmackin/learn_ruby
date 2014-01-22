@@ -1,4 +1,5 @@
-require "friend"
+require_relative 'friend'
+
 
 describe Friend do
 
