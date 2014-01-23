@@ -13,5 +13,14 @@ def adder(num = 1)
 end
 
 
-def repeater
-	
+def repeater(num = 2)
+	yield + num
+end
+
+def repeater(num = 1)
+  num.times do 
+  yield
+  end
+end
+
+
