@@ -1,4 +1,4 @@
-require 'book'
+require_relative "book_titles"
 
 describe Book do
 
