@@ -1,14 +1,20 @@
+
 class Book
- attr_accessor :title
+  attr_accessor :title
 
-		def title=(string)
-	  no_caps = ["the", "a", "an", "and"]
-	  string.split.each do |word|
-	  	word = word.capitalize unless no_caps.include?
+  def title
+    no_caps = ["a", "an", "and", "in", "the", "of"]
+    new_title =[]
 
-	  end
-		end
+    @title.capitalize!
+    @title.split.each do | word |
+      if no_caps.include?(word)
+        new_title.push(word)
+      else
+        new_title.push(word.capitalize)
+      end
+    end
+    @book = new_title.join(" ")
+  end
 
 end
-
-
